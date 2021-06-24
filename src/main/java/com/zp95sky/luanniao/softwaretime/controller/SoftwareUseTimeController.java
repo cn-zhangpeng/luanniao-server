@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 软件使用时间统计
- * @author zhangpeng
+ * @author 山海散客
  * @date 2021年06月22日 14:44
  */
 @Api(value = "软件使用", tags = "软件使用时间统计接口")
 @RestController
 @RequestMapping(value = "/software/time")
 @RequiredArgsConstructor(onConstructor = @__({ @Autowired}))
-public class SoftwareTimeController {
+public class SoftwareUseTimeController {
 
     @ApiOperation("上报使用记录")
     @PostMapping("/reportRecord")
