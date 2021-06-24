@@ -25,7 +25,7 @@
             <column name="device_type" type="varchar(16)" defaultValue="" remarks="设备类型，pc：电脑端，mobile：移动端">
                 <constraints nullable="false"/>
             </column>
-            <column name="current_date" type="date" remarks="日期">
+            <column name="cur_date" type="date" remarks="日期">
                 <constraints nullable="false"/>
             </column>
             <column name="use_time_length" type="int" defaultValue="0" remarks="软件使用时长，单位：分钟">

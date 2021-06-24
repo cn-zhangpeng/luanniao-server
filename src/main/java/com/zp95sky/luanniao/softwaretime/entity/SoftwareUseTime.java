@@ -3,6 +3,7 @@ package com.zp95sky.luanniao.softwaretime.entity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -14,6 +15,7 @@ import java.time.LocalDate;
  */
 @TableName("software_use_time")
 @Data
+@Builder
 public class SoftwareUseTime {
 
     @TableId
@@ -28,7 +30,7 @@ public class SoftwareUseTime {
     private String deviceType;
 
     /** 日期 */
-    @TableField("current_date")
+    @TableField("cur_date")
     private LocalDate currentDate;
 
     /** 软件使用时长，单位：分钟 */
