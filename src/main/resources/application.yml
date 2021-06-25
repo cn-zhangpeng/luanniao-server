@@ -45,3 +45,10 @@ id-worker:
   worker-id: 1
   data-center-id: 1
 
+token:
+  jwt:
+    key: zp95sky
+    iss: 11
+    # token 有效期，单位：分钟
+    expm: 1440
+

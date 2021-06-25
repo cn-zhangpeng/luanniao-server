@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 软件使用时间统计
  * @author 山海散客
  * @date 2021年06月22日 14:44
  */

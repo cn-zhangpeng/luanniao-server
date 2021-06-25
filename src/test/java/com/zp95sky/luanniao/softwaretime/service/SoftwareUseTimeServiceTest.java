@@ -26,15 +26,20 @@ public class SoftwareUseTimeServiceTest {
     @Test
     public void testBatchReportSoftwareUseTime() {
         Map<Long, Integer> params = new HashMap<Long, Integer>() {{
-            put(1407990753380143104L, 299); //IDEA
-            put(1407990753380143105L, 86); // Google Chrome
-            put(1407990753380143106L, 41); // WeChat
-            put(1407990753380143107L, 23); // 腾讯QQ
-            put(1407990753380143108L, 7); // Postman
-            put(1407990753380143109L, 6); // Xshell
-            put(1407990753380143110L, 5); // 有道云笔记
-            put(1407990753380143111L, 5); // 企业微信
-            put(1407990753380143112L, 5); // WPS Office
+            put(1407990753380143104L, 114); //IDEA
+            put(1407990753380143105L, 159); // Google Chrome
+            put(1407990753380143106L, 55); // WeChat
+            put(1407990753380143107L, 12); // 腾讯QQ
+            put(1408016476153188352L, 27); // 终端
+//            put(1407990753380143108L, 7); // Postman
+            put(1408017039897006080L, 12); // XMind
+            put(1408017039897006081L, 6); // DataGrip
+            put(1408017039897006082L, 6); // Visual Studio Code
+            put(1408017039897006083L, 2); // Docker
+//            put(1407990753380143109L, 42); // Xshell
+            put(1407990753380143110L, 3); // 有道云笔记
+//            put(1407990753380143111L, 5); // 企业微信
+            put(1407990753380143112L, 2); // WPS Office
         }};
         BatchReportSoftwareUseTimeDto useTimeDto = constructBatchSoftwareUseTimeDto(params);
         useTimeService.batchReportSoftwareUseTime(useTimeDto);

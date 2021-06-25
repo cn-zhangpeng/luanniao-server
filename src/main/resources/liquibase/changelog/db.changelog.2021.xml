@@ -34,4 +34,26 @@
         </createTable>
     </changeSet>
     
+    <changeSet id="202106251358" author="山海散客">
+        <comment>添加用户表</comment>
+
+        <createTable tableName="user" remarks="用户表">
+            <column name="id" type="bigint" remarks="ID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="username" type="varchar(64)" remarks="用户名">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="varchar(255)" remarks="密码">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nickname" type="varchar(64)" remarks="昵称" defaultValue="">
+                <constraints nullable="false"/>
+            </column>
+            <column name="create_time" type="datetime" remarks="创建时间" defaultValue="now()">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    
 </databaseChangeLog>

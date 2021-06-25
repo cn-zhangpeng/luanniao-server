@@ -12,6 +12,11 @@ import org.springframework.http.HttpStatus;
 @Getter
 @AllArgsConstructor
 public enum ResponseCodeEnum {
+    /**
+     * 登录认证
+     */
+    ERROR_AUTH_INVALID(HttpStatus.UNAUTHORIZED, "认证失败！"),
+    ERROR_USERNAME_PASSWORD(HttpStatus.UNAUTHORIZED, "用户名或密码错误！"),
 
     /**
      * 常用错误码

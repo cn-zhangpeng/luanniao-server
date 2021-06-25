@@ -21,7 +21,7 @@ public class SoftwareServiceTest {
 
     @Test
     public void testAddSoftware() {
-        String[] softwareArr = {"Intellij IDEA", "Google Chrome", "WeChat", "腾讯QQ", "Postman", "Xshell", "有道云笔记", "企业微信", "WPS Office"};
+        String[] softwareArr = {"XMind", "DataGrip", "Visual Studio Code", "Docker"};
         List<AddSoftwareDto> softwareList = new ArrayList<>(softwareArr.length);
         for (String name : softwareArr) {
             softwareList.add(constructAddSoftwareDto(name));

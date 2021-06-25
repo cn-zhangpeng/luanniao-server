@@ -13,4 +13,9 @@ public class CommonConstant {
     /** 字符串常量 */
     public static final String STRING_DATA_DEFAULT = "";
 
+    /**
+     * jwt
+     */
+    public static final String JWT_HEADER_NAME = "Authorization";
+
 }
