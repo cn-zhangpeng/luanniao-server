@@ -1,9 +1,9 @@
-package com.zp95sky.luanniao.softwaretime.controller;
+package com.zp95sky.luanniao.software.controller;
 
 import com.zp95sky.luanniao.common.response.BaseResult;
 import com.zp95sky.luanniao.common.response.ResultUtil;
-import com.zp95sky.luanniao.softwaretime.dto.BatchReportSoftwareUseTimeDto;
-import com.zp95sky.luanniao.softwaretime.service.SoftwareUseTimeService;
+import com.zp95sky.luanniao.software.dto.BatchReportSoftwareUseTimeDto;
+import com.zp95sky.luanniao.software.service.SoftwareUseTimeService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;

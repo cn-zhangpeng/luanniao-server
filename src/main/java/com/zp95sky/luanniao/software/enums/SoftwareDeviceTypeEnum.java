@@ -1,4 +1,4 @@
-package com.zp95sky.luanniao.softwaretime.enums;
+package com.zp95sky.luanniao.software.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

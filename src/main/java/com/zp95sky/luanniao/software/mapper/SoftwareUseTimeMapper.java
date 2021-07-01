@@ -1,7 +1,7 @@
-package com.zp95sky.luanniao.softwaretime.mapper;
+package com.zp95sky.luanniao.software.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.zp95sky.luanniao.softwaretime.entity.SoftwareUseTime;
+import com.zp95sky.luanniao.software.entity.SoftwareUseTime;
 import org.springframework.stereotype.Repository;
 
 /**

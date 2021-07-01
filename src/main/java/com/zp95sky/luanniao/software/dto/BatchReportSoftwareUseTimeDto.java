@@ -1,4 +1,4 @@
-package com.zp95sky.luanniao.softwaretime.dto;
+package com.zp95sky.luanniao.software.dto;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 public class BatchReportSoftwareUseTimeDto {
 
-    /** {@link com.zp95sky.luanniao.softwaretime.enums.SoftwareDeviceTypeEnum} */
+    /** {@link com.zp95sky.luanniao.software.enums.SoftwareDeviceTypeEnum} */
     @ApiModelProperty("设备类型，pc：电脑端，mobile：移动端")
     private String deviceType;
 

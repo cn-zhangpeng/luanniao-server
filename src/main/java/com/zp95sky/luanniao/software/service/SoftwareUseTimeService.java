@@ -1,9 +1,9 @@
-package com.zp95sky.luanniao.softwaretime.service;
+package com.zp95sky.luanniao.software.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.zp95sky.luanniao.softwaretime.dto.BatchReportSoftwareUseTimeDto;
-import com.zp95sky.luanniao.softwaretime.dto.ReportSoftwareUseTimeDto;
-import com.zp95sky.luanniao.softwaretime.entity.SoftwareUseTime;
+import com.zp95sky.luanniao.software.dto.BatchReportSoftwareUseTimeDto;
+import com.zp95sky.luanniao.software.dto.ReportSoftwareUseTimeDto;
+import com.zp95sky.luanniao.software.entity.SoftwareUseTime;
 
 /**
  * 软件使用时间业务处理

@@ -1,4 +1,4 @@
-package com.zp95sky.luanniao.softwaretime.dto;
+package com.zp95sky.luanniao.software.dto;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

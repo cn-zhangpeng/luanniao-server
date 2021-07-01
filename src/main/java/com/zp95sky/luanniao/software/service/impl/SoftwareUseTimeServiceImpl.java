@@ -1,14 +1,14 @@
-package com.zp95sky.luanniao.softwaretime.service.impl;
+package com.zp95sky.luanniao.software.service.impl;
 
 import cn.hutool.core.lang.Snowflake;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.zp95sky.luanniao.softwaretime.dto.BatchReportSoftwareUseTimeDetailDto;
-import com.zp95sky.luanniao.softwaretime.dto.BatchReportSoftwareUseTimeDto;
-import com.zp95sky.luanniao.softwaretime.dto.ReportSoftwareUseTimeDto;
-import com.zp95sky.luanniao.softwaretime.entity.SoftwareUseTime;
-import com.zp95sky.luanniao.softwaretime.enums.SoftwareDeviceTypeEnum;
-import com.zp95sky.luanniao.softwaretime.mapper.SoftwareUseTimeMapper;
-import com.zp95sky.luanniao.softwaretime.service.SoftwareUseTimeService;
+import com.zp95sky.luanniao.software.dto.BatchReportSoftwareUseTimeDetailDto;
+import com.zp95sky.luanniao.software.dto.BatchReportSoftwareUseTimeDto;
+import com.zp95sky.luanniao.software.dto.ReportSoftwareUseTimeDto;
+import com.zp95sky.luanniao.software.entity.SoftwareUseTime;
+import com.zp95sky.luanniao.software.enums.SoftwareDeviceTypeEnum;
+import com.zp95sky.luanniao.software.mapper.SoftwareUseTimeMapper;
+import com.zp95sky.luanniao.software.service.SoftwareUseTimeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

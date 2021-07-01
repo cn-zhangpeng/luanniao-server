@@ -1,14 +1,17 @@
-package com.zp95sky.luanniao.softwaretime.service.impl;
+package com.zp95sky.luanniao.software.service.impl;
 
 import cn.hutool.core.lang.Snowflake;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.zp95sky.luanniao.softwaretime.dto.AddSoftwareDto;
-import com.zp95sky.luanniao.softwaretime.entity.Software;
-import com.zp95sky.luanniao.softwaretime.mapper.SoftwareMapper;
-import com.zp95sky.luanniao.softwaretime.service.SoftwareService;
+import com.zp95sky.luanniao.software.domain.SoftwareListDo;
+import com.zp95sky.luanniao.software.dto.AddSoftwareDto;
+import com.zp95sky.luanniao.software.entity.Software;
+import com.zp95sky.luanniao.software.mapper.SoftwareMapper;
+import com.zp95sky.luanniao.software.service.SoftwareService;
+import liquibase.util.CollectionUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +39,22 @@ public class SoftwareServiceImpl extends ServiceImpl<SoftwareMapper, Software> i
             softwareList.add(constructSoftware(softwareDto.getSoftwareName()));
         }
         saveBatch(softwareList);
+    }
+
+    @Override
+    public List<SoftwareListDo> getSoftwareList() {
+        List<Software> softwareList = list();
+        List<SoftwareListDo> softwareListDos = new ArrayList<>(softwareList.size());
+
+        if (CollectionUtils.isEmpty(softwareList)) { return softwareListDos; }
+        softwareList.forEach(s -> softwareListDos.add(constructSoftwareListDo(s)));
+        return softwareListDos;
+    }
+
+    private SoftwareListDo constructSoftwareListDo(Software software) {
+        return SoftwareListDo.builder()
+                .id(software.getId()).softwareName(software.getSoftwareName())
+                .build();
     }
 
     private Software constructSoftware(String softwareName) {

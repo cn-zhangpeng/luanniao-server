@@ -29,8 +29,8 @@ import java.util.List;
  * @author 山海散客
  * @date 2021年06月25日 12:49
  */
-@WebFilter(urlPatterns = "/*")
-@Component
+//@WebFilter(urlPatterns = "/*")
+//@Component
 @Slf4j
 @RequiredArgsConstructor(onConstructor = @__({ @Autowired}))
 public class JwtFilter implements Filter {

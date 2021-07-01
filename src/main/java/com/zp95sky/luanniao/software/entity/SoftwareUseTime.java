@@ -1,4 +1,4 @@
-package com.zp95sky.luanniao.softwaretime.entity;
+package com.zp95sky.luanniao.software.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;

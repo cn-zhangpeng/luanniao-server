@@ -1,7 +1,7 @@
-package com.zp95sky.luanniao.softwaretime.service;
+package com.zp95sky.luanniao.software.service;
 
 import com.zp95sky.luanniao.annotation.CommonTestAnnotation;
-import com.zp95sky.luanniao.softwaretime.dto.AddSoftwareDto;
+import com.zp95sky.luanniao.software.dto.AddSoftwareDto;
 import org.junit.jupiter.api.Test;
 
 import javax.annotation.Resource;
@@ -21,7 +21,7 @@ public class SoftwareServiceTest {
 
     @Test
     public void testAddSoftware() {
-        String[] softwareArr = {"XMind", "DataGrip", "Visual Studio Code", "Docker"};
+        String[] softwareArr = {"Another Redis Desktop Manager"};
         List<AddSoftwareDto> softwareList = new ArrayList<>(softwareArr.length);
         for (String name : softwareArr) {
             softwareList.add(constructAddSoftwareDto(name));

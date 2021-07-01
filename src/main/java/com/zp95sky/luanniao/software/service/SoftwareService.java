@@ -1,8 +1,9 @@
-package com.zp95sky.luanniao.softwaretime.service;
+package com.zp95sky.luanniao.software.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.zp95sky.luanniao.softwaretime.dto.AddSoftwareDto;
-import com.zp95sky.luanniao.softwaretime.entity.Software;
+import com.zp95sky.luanniao.software.domain.SoftwareListDo;
+import com.zp95sky.luanniao.software.dto.AddSoftwareDto;
+import com.zp95sky.luanniao.software.entity.Software;
 
 import java.util.List;
 
@@ -24,5 +25,11 @@ public interface SoftwareService extends IService<Software> {
      * @param softwareDtoList 软件信息列表
      */
     void batchAddSoftware(List<AddSoftwareDto> softwareDtoList);
+
+    /**
+     * 查询软件列表
+     * @return 软件列表
+     */
+    List<SoftwareListDo> getSoftwareList();
 
 }
