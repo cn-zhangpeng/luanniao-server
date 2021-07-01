@@ -1,6 +1,5 @@
 package com.zp95sky.luanniao.user.utils;
 
-import org.apache.commons.lang3.CharSet;
 import org.springframework.util.DigestUtils;
 
 import java.nio.charset.StandardCharsets;
