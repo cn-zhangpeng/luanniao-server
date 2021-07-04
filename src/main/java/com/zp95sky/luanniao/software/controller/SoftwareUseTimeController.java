@@ -2,16 +2,14 @@ package com.zp95sky.luanniao.software.controller;
 
 import com.zp95sky.luanniao.common.response.BaseResult;
 import com.zp95sky.luanniao.common.response.ResultUtil;
+import com.zp95sky.luanniao.software.domain.WeekStatisticDo;
 import com.zp95sky.luanniao.software.dto.BatchReportSoftwareUseTimeDto;
 import com.zp95sky.luanniao.software.service.SoftwareUseTimeService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author 山海散客
@@ -30,6 +28,13 @@ public class SoftwareUseTimeController {
     public BaseResult<Void> reportRecord(@RequestBody BatchReportSoftwareUseTimeDto softwareUseTimeDto) {
         softwareUseTimeService.batchReportSoftwareUseTime(softwareUseTimeDto);
         return ResultUtil.buildResultSuccess();
+    }
+
+    @ApiOperation("近一周时间使用量统计")
+    @GetMapping("/weekStatistic")
+    public BaseResult<WeekStatisticDo> weekStatistic() {
+        WeekStatisticDo weekStatisticDo = softwareUseTimeService.weekStatistic();
+        return ResultUtil.buildResultSuccess(weekStatisticDo);
     }
 
 }

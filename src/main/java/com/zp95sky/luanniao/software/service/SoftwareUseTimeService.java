@@ -1,6 +1,7 @@
 package com.zp95sky.luanniao.software.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.zp95sky.luanniao.software.domain.WeekStatisticDo;
 import com.zp95sky.luanniao.software.dto.BatchReportSoftwareUseTimeDto;
 import com.zp95sky.luanniao.software.dto.ReportSoftwareUseTimeDto;
 import com.zp95sky.luanniao.software.entity.SoftwareUseTime;
@@ -23,5 +24,11 @@ public interface SoftwareUseTimeService extends IService<SoftwareUseTime> {
      * @param useTimeDto 软件使用时长信息
      */
     void batchReportSoftwareUseTime(BatchReportSoftwareUseTimeDto useTimeDto);
+
+    /**
+     * 近一周时间使用量统计
+     * @return 使用量统计
+     */
+    WeekStatisticDo weekStatistic();
 
 }

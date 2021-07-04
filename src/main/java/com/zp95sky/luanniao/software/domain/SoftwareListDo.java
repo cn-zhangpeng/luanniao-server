@@ -1,5 +1,7 @@
 package com.zp95sky.luanniao.software.domain;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Builder;
@@ -15,6 +17,7 @@ import lombok.Data;
 public class SoftwareListDo {
 
     @ApiModelProperty("软件ID")
+    @JsonSerialize(using = ToStringSerializer.class)
     private Long id;
 
     @ApiModelProperty("软件名称")
