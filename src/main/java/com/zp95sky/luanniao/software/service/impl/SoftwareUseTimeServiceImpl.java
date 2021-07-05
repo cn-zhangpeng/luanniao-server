@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zp95sky.luanniao.software.domain.WeekStatisticDo;
 import com.zp95sky.luanniao.software.domain.WeekStatisticUseTimeDo;
+import com.zp95sky.luanniao.software.domain.YearDateStatisticDo;
 import com.zp95sky.luanniao.software.dto.BatchReportSoftwareUseTimeDetailDto;
 import com.zp95sky.luanniao.software.dto.BatchReportSoftwareUseTimeDto;
 import com.zp95sky.luanniao.software.dto.ReportSoftwareUseTimeDto;
@@ -37,6 +38,8 @@ public class SoftwareUseTimeServiceImpl extends ServiceImpl<SoftwareUseTimeMappe
     private final Snowflake snowflake;
 
     private final SoftwareService softwareService;
+
+    private final SoftwareUseTimeMapper useTimeMapper;
 
     @Override
     public void reportSoftwareUseTime(ReportSoftwareUseTimeDto useTimeDto) {
@@ -83,6 +86,14 @@ public class SoftwareUseTimeServiceImpl extends ServiceImpl<SoftwareUseTimeMappe
 
         // 组装返回结果
         return constructWeekStatisticDo(topIds, dateTotalMap, softwareMap, startDate, endDate);
+    }
+
+    @Override
+    public List<YearDateStatisticDo> yearDateStatistic() {
+        int curYear = LocalDate.now().getYear();
+
+        // 查询指定年份的每一天的软件使用时长
+        return useTimeMapper.selectYearDateStatistic(curYear);
     }
 
     private WeekStatisticDo constructWeekStatisticDo(List<Long> topIds, Map<String, Integer> dateTotalMap,

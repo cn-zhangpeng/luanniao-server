@@ -3,6 +3,7 @@ package com.zp95sky.luanniao.software.controller;
 import com.zp95sky.luanniao.common.response.BaseResult;
 import com.zp95sky.luanniao.common.response.ResultUtil;
 import com.zp95sky.luanniao.software.domain.WeekStatisticDo;
+import com.zp95sky.luanniao.software.domain.YearDateStatisticDo;
 import com.zp95sky.luanniao.software.dto.BatchReportSoftwareUseTimeDto;
 import com.zp95sky.luanniao.software.service.SoftwareUseTimeService;
 import io.swagger.annotations.Api;
@@ -10,6 +11,8 @@ import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author 山海散客
@@ -35,6 +38,13 @@ public class SoftwareUseTimeController {
     public BaseResult<WeekStatisticDo> weekStatistic() {
         WeekStatisticDo weekStatisticDo = softwareUseTimeService.weekStatistic();
         return ResultUtil.buildResultSuccess(weekStatisticDo);
+    }
+
+    @ApiOperation("本年每天软件的使用时长")
+    @GetMapping("/yearDateStatistic")
+    public BaseResult<List<YearDateStatisticDo>> yearDateStatistic() {
+        List<YearDateStatisticDo> statisticDoList = softwareUseTimeService.yearDateStatistic();
+        return ResultUtil.buildResultSuccess(statisticDoList);
     }
 
 }
