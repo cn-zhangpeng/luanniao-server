@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.experimental.SuperBuilder;
 
 /**
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年06月22日 13:55
  */
 @ApiModel(value = "CustomPage 分页信息", description = "分页信息")

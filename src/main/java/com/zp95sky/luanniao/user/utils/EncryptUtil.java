@@ -6,7 +6,7 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * 加密工具类
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年06月25日 14:28
  */
 public class EncryptUtil {

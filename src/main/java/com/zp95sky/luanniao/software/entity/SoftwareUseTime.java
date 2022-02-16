@@ -10,7 +10,7 @@ import java.time.LocalDate;
 
 /**
  * 软件使用时间记录
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年06月23日 13:57
  */
 @TableName("software_use_time")

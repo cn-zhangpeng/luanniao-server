@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 
 /**
  * 错误码
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年06月22日 13:56
  */
 @Getter

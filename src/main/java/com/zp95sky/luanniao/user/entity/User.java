@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 
 /**
  * 用户类
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年06月25日 12:59
  */
 @TableName("user")

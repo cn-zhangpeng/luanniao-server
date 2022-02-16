@@ -10,7 +10,7 @@ import java.util.Date;
 
 /**
  * 用户认证签名
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年06月25日 12:49
  */
 @EqualsAndHashCode(callSuper = true)

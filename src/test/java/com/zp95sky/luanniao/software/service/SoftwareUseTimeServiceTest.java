@@ -17,7 +17,7 @@ import java.util.Map;
 
 /**
  * 软件使用时间业务处理
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年06月24日 16:57
  */
 @CommonTestAnnotation

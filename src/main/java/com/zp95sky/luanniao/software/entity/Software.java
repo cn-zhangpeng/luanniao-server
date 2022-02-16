@@ -8,7 +8,7 @@ import lombok.Data;
 
 /**
  * 使用软件
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年06月23日 14:06
  */
 @TableName("software")

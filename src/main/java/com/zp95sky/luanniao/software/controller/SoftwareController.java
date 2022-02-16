@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年07月01日 13:52
  */
 @Api(tags = "软件管理")

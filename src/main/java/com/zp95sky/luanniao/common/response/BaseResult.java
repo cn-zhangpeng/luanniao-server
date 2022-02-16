@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 
 /**
  * 通用返回
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年06月22日 14:00
  */
 @ApiModel(value = "BaseResult<T> 通用返回格式", description = "通用返回格式")

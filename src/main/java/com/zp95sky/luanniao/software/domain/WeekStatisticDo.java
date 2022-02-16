@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 /**
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年07月02日 14:26
  */
 @ApiModel("最近一周软件使用时长统计")

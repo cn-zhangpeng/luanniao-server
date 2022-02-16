@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年06月24日 13:56
  */
 @ApiModel("添加软件参数")

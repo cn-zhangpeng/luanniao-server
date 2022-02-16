@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年06月22日 13:30
  */
 @SpringBootApplication

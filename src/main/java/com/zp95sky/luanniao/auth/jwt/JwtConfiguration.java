@@ -11,7 +11,7 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * jwt 配置
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年06月25日 12:49
  */
 @Data

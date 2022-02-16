@@ -8,7 +8,7 @@ import lombok.Data;
 import java.time.LocalDate;
 
 /**
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年07月05日 13:59
  */
 @ApiModel("本年每天软件使用统计")

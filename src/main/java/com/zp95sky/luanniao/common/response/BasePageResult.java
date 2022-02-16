@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * 分页通用返回
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年06月22日 14:01
  */
 @ApiModel(value = "BasePageResult<T> 分页请求通用相应信息", description = "分页请求通用相应信息")

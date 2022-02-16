@@ -14,7 +14,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 /**
  * Knife4j 配置
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年06月22日 13:49
  */
 @Configuration
@@ -39,7 +39,7 @@ public class Knife4jConfig {
         return new ApiInfoBuilder()
                 .title("鸾鸟")
                 .description("鸾鸟")
-                .contact(new Contact("山海散客", "", "zp95sky@163.com"))
+                .contact(new Contact("山海紫穹", "", "zp95sky@163.com"))
                 .version("1.0")
                 .build();
     }

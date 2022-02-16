@@ -5,7 +5,7 @@ import com.zp95sky.luanniao.user.dto.LoginDto;
 
 /**
  * 登录检测
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年06月25日 14:21
  */
 public interface LoginCheckService {

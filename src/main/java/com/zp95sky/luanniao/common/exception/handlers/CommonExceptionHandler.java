@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * 通用异常处理
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年06月22日 13:59
  */
 @ControllerAdvice

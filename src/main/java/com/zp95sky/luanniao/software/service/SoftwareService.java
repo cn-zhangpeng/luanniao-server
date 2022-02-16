@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * 软件业务处理
- * @author 山海散客
+ * @author 山海紫穹
  * @date 2021年06月24日 13:33
  */
 public interface SoftwareService extends IService<Software> {
