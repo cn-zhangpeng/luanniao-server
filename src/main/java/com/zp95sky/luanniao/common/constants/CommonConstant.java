@@ -3,9 +3,10 @@ package com.zp95sky.luanniao.common.constants;
 /**
  * 常用常量
  * @author 山海紫穹
- * @date 2021年06月22日 13:53
  */
 public class CommonConstant {
+
+    private CommonConstant() {}
 
     /** 逗号分隔符 */
     public static final String COMMA_DELIMITER = ",";
@@ -16,6 +17,6 @@ public class CommonConstant {
     /**
      * jwt
      */
-    public static final String JWT_HEADER_NAME = "Authorization";
+    public static final String TOKEN_HEADER_NAME = "X-ACCESS-TOKEN";
 
 }

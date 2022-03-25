@@ -7,7 +7,7 @@ import com.zp95sky.luanniao.user.dto.AddUserDto;
 import com.zp95sky.luanniao.user.entity.User;
 import com.zp95sky.luanniao.user.mapper.UserMapper;
 import com.zp95sky.luanniao.user.service.UserService;
-import com.zp95sky.luanniao.user.utils.EncryptUtil;
+import com.zp95sky.luanniao.common.utils.EncryptUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
