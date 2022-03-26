@@ -10,7 +10,6 @@ import javax.validation.constraints.NotNull;
 
 /**
  * @author 山海紫穹
- * @date 2021年06月25日 13:53
  */
 @ApiModel("登录参数")
 @Data
