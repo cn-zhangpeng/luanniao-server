@@ -3,7 +3,7 @@
                    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
 
-    <changeSet id="202106251444" author="山海散客">
+    <changeSet id="202106251444" author="山海紫穹">
         <comment>初始化用户</comment>
 
         <insert tableName="user">

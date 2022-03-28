@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    
+    <changeSet id="202203280803" author="山海紫穹">
+        <comment>添加日程清单表及任务表</comment>
+
+        <createTable tableName="schedule_list" remarks="日程清单表">
+            <column name="id" type="bigint" remarks="ID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(32)" remarks="清单名称" defaultValue="">
+                <constraints nullable="false"/>
+            </column>
+            <column name="list_order" type="integer" remarks="排序">
+                <constraints nullable="false"/>
+            </column>
+            <column name="create_time" type="datetime" remarks="创建时间" defaultValue="now()">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="schedule_task" remarks="日程任务表">
+            <column name="id" type="bigint" remarks="ID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="list_id" type="bigint" remarks="ID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="title" type="varchar(64)" remarks="标题" defaultValue="">
+                <constraints nullable="false"/>
+            </column>
+            <column name="content" type="varchar(255)" remarks="内容" defaultValue="">
+                <constraints nullable="false"/>
+            </column>
+            <column name="task_time" type="datetime" remarks="任务时间" defaultValue="now()">
+                <constraints nullable="false"/>
+            </column>
+            <column name="task_status" type="varchar(16)" remarks="任务状态" defaultValue="">
+                <constraints nullable="false"/>
+            </column>
+            <column name="create_time" type="datetime" remarks="创建时间" defaultValue="now()">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

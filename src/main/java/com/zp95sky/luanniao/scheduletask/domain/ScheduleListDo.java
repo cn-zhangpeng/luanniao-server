@@ -8,7 +8,7 @@ import lombok.Builder;
 import lombok.Data;
 
 /**
- * @author 山海散客
+ * @author 山海紫穹
  */
 @ApiModel(value = "ScheduleListDo", description = "日程列表")
 @Data
