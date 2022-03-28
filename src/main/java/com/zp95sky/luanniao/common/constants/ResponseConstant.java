@@ -15,8 +15,9 @@ public class ResponseConstant {
 
     public static final String USER_NOT_EXIST = "用户不存在！";
 
-    public static final String SCHEDULE_LIST_NAME_IS_NULL = "清单名称不能为空";
-    public static final String SCHEDULE_LIST_ID_IS_NULL = "清单ID不能为空";
+    public static final String SCHEDULE_LIST_NAME_IS_NULL = "清单名称不能为空！";
+    public static final String SCHEDULE_LIST_ID_IS_NULL = "清单ID不能为空！";
+    public static final String SCHEDULE_TASK_NOT_EXIST = "任务不存在！";
 
     public static final String INTERNAL_SERVER_ERROR = "未知错误，请联系管理员！";
 

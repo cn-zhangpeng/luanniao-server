@@ -22,11 +22,11 @@ import java.util.List;
 /**
  * @author 山海紫穹
  */
-@Api(tags = "日程管理")
+@Api(tags = "日程清单管理")
 @RestController
 @RequestMapping("/schedule/list")
 @RequiredArgsConstructor(onConstructor = @__({ @Autowired}))
-public class ScheduleController {
+public class ScheduleListController {
 
     private final ScheduleListService listService;
 

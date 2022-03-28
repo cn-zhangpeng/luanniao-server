@@ -10,7 +10,7 @@ import lombok.Data;
 /**
  * @author 山海紫穹
  */
-@ApiModel(value = "ScheduleListDo", description = "日程列表")
+@ApiModel(value = "ScheduleListDo", description = "日程清单")
 @Data
 @Builder
 public class ScheduleListDo {

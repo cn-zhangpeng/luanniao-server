@@ -8,7 +8,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 /**
  * 日程任务
@@ -31,7 +33,7 @@ public class ScheduleTask {
     @TableField("title")
     private String title;
 
-    /** 日程描述 */
+    /** 日程内容 */
     @TableField("content")
     private String content;
 

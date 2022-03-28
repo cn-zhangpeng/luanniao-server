@@ -34,9 +34,7 @@
             <column name="content" type="varchar(255)" remarks="内容" defaultValue="">
                 <constraints nullable="false"/>
             </column>
-            <column name="task_time" type="datetime" remarks="任务时间" defaultValue="now()">
-                <constraints nullable="false"/>
-            </column>
+            <column name="task_time" type="datetime" remarks="任务时间"/>
             <column name="task_status" type="varchar(16)" remarks="任务状态" defaultValue="">
                 <constraints nullable="false"/>
             </column>
