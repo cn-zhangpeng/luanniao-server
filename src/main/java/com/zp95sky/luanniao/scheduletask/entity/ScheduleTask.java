@@ -8,9 +8,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 /**
  * 日程任务
@@ -44,6 +42,10 @@ public class ScheduleTask {
     /** 任务状态 */
     @TableField("task_status")
     private TaskStatus taskStatus;
+
+    /** 用户ID */
+    @TableField("user_id")
+    private Long userId;
 
     /** 创建时间 */
     @TableField("create_time")

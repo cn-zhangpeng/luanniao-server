@@ -29,6 +29,10 @@ public class ScheduleList {
     @TableField("list_order")
     private Integer listOrder;
 
+    /** 用户ID */
+    @TableField("user_id")
+    private Long userId;
+
     /** 创建时间 */
     @TableField("create_time")
     private LocalDateTime createTime;

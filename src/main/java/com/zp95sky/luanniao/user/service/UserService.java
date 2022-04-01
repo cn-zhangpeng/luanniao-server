@@ -7,7 +7,6 @@ import com.zp95sky.luanniao.user.entity.User;
 /**
  * 用户业务处理
  * @author 山海紫穹
- * @date 2021年06月25日 13:38
  */
 public interface UserService extends IService<User> {
 

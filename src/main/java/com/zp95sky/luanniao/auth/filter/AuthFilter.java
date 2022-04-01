@@ -27,7 +27,7 @@ import java.util.List;
  * @author 山海紫穹
  */
 @WebFilter(urlPatterns = "/*")
-//@Component
+@Component
 @Slf4j
 @RequiredArgsConstructor(onConstructor = @__({ @Autowired}))
 public class AuthFilter implements Filter {

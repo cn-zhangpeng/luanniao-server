@@ -15,7 +15,7 @@ public class CommonConstant {
     public static final String STRING_DATA_DEFAULT = "";
 
     /**
-     * jwt
+     * token
      */
     public static final String TOKEN_HEADER_NAME = "X-ACCESS-TOKEN";
 

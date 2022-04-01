@@ -43,4 +43,20 @@
             </column>
         </createTable>
     </changeSet>
+
+    <changeSet id="202204011435" author="山海紫穹">
+        <comment>日程表、任务表添加用户ID字段</comment>
+
+        <addColumn tableName="schedule_list">
+            <column name="user_id" type="bigint" remarks="用户ID" afterColumn="list_order">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+
+        <addColumn tableName="schedule_task">
+            <column name="user_id" type="bigint" remarks="用户ID" afterColumn="task_status">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>

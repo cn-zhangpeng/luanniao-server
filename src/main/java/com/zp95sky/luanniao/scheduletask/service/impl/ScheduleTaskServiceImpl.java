@@ -3,6 +3,7 @@ package com.zp95sky.luanniao.scheduletask.service.impl;
 import cn.hutool.core.lang.Snowflake;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.zp95sky.luanniao.auth.service.LoginService;
 import com.zp95sky.luanniao.common.constants.ResponseConstant;
 import com.zp95sky.luanniao.scheduletask.domain.ScheduleTaskDo;
 import com.zp95sky.luanniao.scheduletask.domain.ScheduleTaskListDo;
@@ -19,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+import javax.annotation.Resource;
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -32,34 +34,48 @@ import java.util.stream.Collectors;
 public class ScheduleTaskServiceImpl extends ServiceImpl<ScheduleTaskMapper, ScheduleTask>
         implements ScheduleTaskService {
 
-    private final ScheduleListService listService;
+    @Resource
+    private ScheduleListService listService;
+
+    private final LoginService loginService;
 
     private final Snowflake snowflake;
 
     @Override
     public List<ScheduleTaskListDo> getScheduleTask(Long listId) {
-        LambdaQueryWrapper<ScheduleTask> queryWrapper = buildListQueryWrapper(listId);
+        listService.checkUserPermission(listId);
+
+        Long userId = loginService.getCurrentUserId();
+        LambdaQueryWrapper<ScheduleTask> queryWrapper = buildListQueryWrapper(listId, userId);
         List<ScheduleTask> taskList = list(queryWrapper);
         return buildScheduleTaskListDo(taskList);
     }
 
     @Override
     public void addScheduleTask(AddScheduleTaskDto taskDto) {
+        Long listId = taskDto.getListId();
+        listService.checkUserPermission(listId);
+
+        Long userId = loginService.getCurrentUserId();
         ScheduleTask scheduleTask = ScheduleTask.builder()
-                .id(snowflake.nextId()).listId(taskDto.getListId()).title(taskDto.getTitle())
-                .content(taskDto.getContent()).taskTime(taskDto.getTaskTime())
-                .taskStatus(ScheduleTask.TaskStatus.UNDONE).createTime(LocalDateTime.now())
+                .id(snowflake.nextId()).listId(listId).title(taskDto.getTitle()).content(taskDto.getContent())
+                .taskTime(taskDto.getTaskTime()).taskStatus(ScheduleTask.TaskStatus.UNDONE)
+                .userId(userId).createTime(LocalDateTime.now())
                 .build();
         save(scheduleTask);
     }
 
     @Override
     public void deleteScheduleTask(Long taskId) {
+        checkUserPermission(taskId);
+
         removeById(taskId);
     }
 
     @Override
     public void updateScheduleTask(Long taskId, UpdateScheduleTaskDto taskDto) {
+        checkUserPermission(taskId);
+
         ScheduleTask scheduleTask = ScheduleTask.builder()
                 .id(taskId).title(taskDto.getTitle()).content(taskDto.getContent())
                 .taskTime(taskDto.getTaskTime()).taskStatus(taskDto.getTaskStatus())
@@ -74,6 +90,24 @@ public class ScheduleTaskServiceImpl extends ServiceImpl<ScheduleTaskMapper, Sch
 
         ScheduleList scheduleList = listService.getById(scheduleTask.getListId());
         return buildScheduleTaskDo(scheduleList, scheduleTask);
+    }
+
+    @Override
+    public void deleteByListId(Long listId) {
+        deleteByListIdService(listId);
+    }
+
+    private void deleteByListIdService(Long listId) {
+        LambdaQueryWrapper<ScheduleTask> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(ScheduleTask::getListId, listId);
+        remove(queryWrapper);
+    }
+
+    private void checkUserPermission(Long taskId) {
+        Long userId = loginService.getCurrentUserId();
+
+        ScheduleTask scheduleTask = getById(taskId);
+        Assert.isTrue(scheduleTask.getUserId().equals(userId), ResponseConstant.PERMISSION_DENIED);
     }
 
     private ScheduleTaskDo buildScheduleTaskDo(ScheduleList scheduleList, ScheduleTask scheduleTask) {
@@ -92,10 +126,11 @@ public class ScheduleTaskServiceImpl extends ServiceImpl<ScheduleTaskMapper, Sch
                 .build()).collect(Collectors.toList());
     }
 
-    private LambdaQueryWrapper<ScheduleTask> buildListQueryWrapper(Long listId) {
+    private LambdaQueryWrapper<ScheduleTask> buildListQueryWrapper(Long listId, Long userId) {
         LambdaQueryWrapper<ScheduleTask> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(ScheduleTask::getListId, listId)
                 .eq(ScheduleTask::getTaskStatus, ScheduleTask.TaskStatus.UNDONE)
+                .eq(ScheduleTask::getUserId, userId)
                 .orderByDesc(ScheduleTask::getTaskTime);
         return queryWrapper;
     }

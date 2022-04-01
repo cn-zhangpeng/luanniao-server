@@ -22,4 +22,10 @@ public interface LoginService {
      */
     String login(LoginDto loginDto);
 
+    /**
+     * 查询当前登录用户ID
+     * @return 用户ID
+     */
+    Long getCurrentUserId();
+
 }

@@ -39,4 +39,10 @@ public interface ScheduleListService extends IService<ScheduleList> {
      */
     void renameScheduleList(Long listId, RenameScheduleListDto listDto);
 
+    /**
+     * 检查当前登录用户是否有权限操作该清单
+     * @param listId 清单ID
+     */
+    void checkUserPermission(Long listId);
+
 }

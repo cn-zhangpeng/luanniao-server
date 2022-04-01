@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.util.ObjectUtils;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -35,6 +36,14 @@ public class CommonExceptionHandler {
         log.error("method argument not valid exception, param: {}, message: {}",
                 ex.getParameter().getParameterName(), msg);
         return msg;
+    }
+
+    @ExceptionHandler(MissingServletRequestParameterException.class)
+    @ResponseBody
+    @ResponseStatus(code = HttpStatus.BAD_REQUEST)
+    public String handleMissingServletRequestParameterException(MissingServletRequestParameterException ex) {
+        log.error("throw missing servlet request parameter exception, message: {}", ex.getMessage());
+        return ResponseConstant.BAD_REQUEST;
     }
 
     @ExceptionHandler(IllegalArgumentException.class)

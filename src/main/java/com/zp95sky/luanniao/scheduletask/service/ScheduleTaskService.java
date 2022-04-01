@@ -48,4 +48,10 @@ public interface ScheduleTaskService extends IService<ScheduleTask> {
      */
     ScheduleTaskDo getScheduleTaskDetail(Long taskId);
 
+    /**
+     * 根据清单ID删除日程任务
+     * @param listId 清单ID
+     */
+    void deleteByListId(Long listId);
+
 }
